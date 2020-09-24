@@ -14,7 +14,7 @@ export default function App(props) {
 
   const getGuitars = async () => {
     try {
-        const response = await fetch('http://localhost:3000/guitars')
+        const response = await fetch('https://guitars-u4.herokuapp.com/guitars')
         const data = await response.json()
         console.log(data)
         setGuitars(data)
@@ -37,7 +37,7 @@ export default function App(props) {
   const handleSubmit  = async(event) =>{
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/guitars', formInputs);
+      const response = await axios.post('https://guitars-u4.herokuapp.com/guitars', formInputs);
       const data = response.data;
       await updateFormInputs({
         brand: '',
